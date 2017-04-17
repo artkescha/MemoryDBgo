@@ -21,7 +21,8 @@ func Set(db storage.DB) http.Handler {
 			return
 
 		}
-		err = db.Set(key, val)
+		//val = []byte("sasasas")
+		err = db.Set(key, string(val))
 		if err != nil {
 
 			http.Error(w, "Error Set value", http.StatusInternalServerError)
